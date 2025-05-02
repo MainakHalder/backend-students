@@ -66,7 +66,7 @@ app.put("/details/:id", async (req, res) => {
   const updatedStudentData = req.body;
 
   try {
-    const updatedStudent = await Student.findByIdAndUpdate(
+    const updatedStudent = await Student.findByIdAndDelete(
       studentId,
       updatedStudentData,
       { new: true }
