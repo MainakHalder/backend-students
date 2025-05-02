@@ -66,7 +66,7 @@ app.put("/details/:id", async (req, res) => {
   const updatedStudentData = req.body;
 
   try {
-    const updatedStudent = await Student.findByIdAndDelete(
+    const updatedStudent = await Student.findByIdAndUpdate(
       studentId,
       updatedStudentData,
       { new: true }
@@ -86,7 +86,7 @@ app.put("/details/:id", async (req, res) => {
 app.delete("/details/:id", async (req, res) => {
   const studentId = req.params.id;
   try {
-    const deletedStudent = await Student.findByIdAndRemove(studentId);
+    const deletedStudent = await Student.findByIdAndDelete(studentId);
     if (!deletedStudent) {
       return res.status(404).json({ error: "Student not found" });
     }
