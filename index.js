@@ -61,7 +61,7 @@ app.get("/details", async (req, res) => {
   }
 });
 
-app.put("/students/:id", async (req, res) => {
+app.put("/details/:id", async (req, res) => {
   const studentId = req.params.id;
   const updatedStudentData = req.body;
 
@@ -83,7 +83,7 @@ app.put("/students/:id", async (req, res) => {
   }
 });
 
-app.delete("/students/:id", async (req, res) => {
+app.delete("/details/:id", async (req, res) => {
   const studentId = req.params.id;
   try {
     const deletedStudent = await Student.findByIdAndRemove(studentId);
